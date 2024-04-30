@@ -10,12 +10,6 @@ const AppTextInput = ({ placeholder, onChange }) => {
 
   return (
     <View style={styles.container}>
-      <MaterialCommunityIcons
-        style={styles.icon}
-        name="leaf"
-        size={25}
-        color="#6e6969"
-      />
       <TextInput
         style={styles.textInput}
         placeholder={placeholder}
@@ -29,7 +23,7 @@ const AppTextInput = ({ placeholder, onChange }) => {
 
 const styles = StyleSheet.create({
   container: {
-    width: "100%",
+    width: "80%",
     padding: 15,
     backgroundColor: "#f8f4f4",
     flexDirection: "row",

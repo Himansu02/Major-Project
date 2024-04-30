@@ -2,6 +2,8 @@ import { createMaterialTopTabNavigator } from '@react-navigation/material-top-ta
 import IotContainer from '../IotContainer';
 import CropPrediction from '../CropPrediction';
 import CropStackNavigator from './CropStackNavigator';
+import Home from '../rohan/HomeComponent.js';
+import MessageContainer from '../rohan/MessageContainer.js';
 
 const Tab = createMaterialTopTabNavigator();
 
@@ -18,13 +20,13 @@ export default function AppNavigator() {
     >
       <Tab.Screen
         name="Iot"
-        component={IotContainer}
+        component={Home}
         options={{ tabBarLabel: 'Home' }}
       />
       <Tab.Screen
         name="CropPrediction"
         component={CropStackNavigator}
-        options={{ tabBarLabel: 'Crop Prediction' }}
+        options={{ tabBarLabel: 'Emergency Contacts' }}
       />
     </Tab.Navigator>
   );
