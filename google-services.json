@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "529552805027",
+    "project_id": "moisture-app-4116c",
+    "storage_bucket": "moisture-app-4116c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:529552805027:android:ae9dc665a2533e743e8316",
+        "android_client_info": {
+          "package_name": "com.himansu02.MoistureApp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBV-CnfeIASRxQPCxdE99SuVwt3pQRDIqA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
