@@ -99,6 +99,7 @@ const styles = StyleSheet.create({
     padding: 30,
     borderRadius: 10,
     color: "white",
+    maxWidth: '80%'
   },
   away: {
     backgroundColor: "#4FAD2A",

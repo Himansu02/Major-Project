@@ -25,6 +25,7 @@ export default function App() {
   const [firstMessagesArray, setFirstMessagesArray] = useState([]);
   const [secondMessagesArray, setSecondMessagesArray] = useState([]);
   const [thirdMessagesArray, setThirdMessagesArray] = useState([]);
+  const [myLocation,setMyLocation] = useState({})
 
   const requestForPushNotification = async () => {
     let token;

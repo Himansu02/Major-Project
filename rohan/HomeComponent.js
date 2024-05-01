@@ -8,7 +8,11 @@ import { MaterialCommunityIcons } from "@expo/vector-icons";
 import { Contex } from "./Contex";
 
 const HomeComponent = () => {
-  const [location, setLocation] = useState({});
+  const [location, setLocation] = useState({
+    name: 'Burla',
+    region: 'Orissa',
+    country: 'India'
+  });
   const {
     firstMessagesArray,
     setFirstMessagesArray,
@@ -18,7 +22,7 @@ const HomeComponent = () => {
     setThirdMessagesArray,
   } = useContext(Contex);
   const [percent, setPercent] = useState(0);
-  const [color,setColor] = useState('')
+  const [color, setColor] = useState("");
 
   const getLocation = async () => {
     try {
@@ -52,40 +56,51 @@ const HomeComponent = () => {
   }, []);
 
   useEffect(() => {
+    getLocation();
     if (percent > 24) {
-      setFirstMessagesArray((prev) => [...prev, "Pick me, my car is locked i am drunk."])
-      setSecondMessagesArray((prev) => [...prev, "Pick me, my car is locked i am drunk."])
-      setThirdMessagesArray((prev) => [...prev, "Pick me, my car is locked i am drunk."])
+      setFirstMessagesArray((prev) => [
+        ...prev,
+        `Hi Ramesh, Pick me, my car is locked. My current location is ${location.name +", " +location.region +", " +location.country}`,
+      ]);
+      setSecondMessagesArray((prev) => [
+        ...prev,
+        `Hi Shalini, Pick me, my car is locked. My current location is ${location.name + ", " + location.region + ", " + location.country}`,
+      ]);
+      setThirdMessagesArray((prev) => [
+        ...prev,
+        `Hi Riya, Pick me, my car is locked. My current location is ${location.name + ", " + location.region + ", " + location.country}`,
+      ]);
     }
   }, [percent]);
 
   useEffect(() => {
-    const updatePercent = async() => {
-      try{
-        const response=await fetch('https://driveaware-561fb-default-rtdb.asia-southeast1.firebasedatabase.app/Alcohol.json');
-        if(!response.ok)
-        {
-          throw new Error('Somethinge Went Wrong!');
+    const updatePercent = async () => {
+      try {
+        const response = await fetch(
+          "https://driveaware-561fb-default-rtdb.asia-southeast1.firebasedatabase.app/Alcohol.json"
+        );
+        if (!response.ok) {
+          throw new Error("Somethinge Went Wrong!");
         }
-        const data=await response.json()
-        console.log(data)
+        const data = await response.json();
+        console.log(data);
         const alcoholLevel = data.Value;
         const currentPercent = Math.round((alcoholLevel / 4095) * 100);
         console.log("hh", currentPercent);
         setPercent(currentPercent);
         if (currentPercent > 24) {
           setColor("red");
-        } else{
+        } else {
           setColor("green");
         }
-      }catch(err){
-        console.log(err.message)
+      } catch (err) {
+        console.log(err.message);
       }
     };
 
     // Call the updatePercent function periodically (e.g., every 2 seconds)
     const intervalId = setInterval(() => {
-        updatePercent();
+      updatePercent();
     }, 2000);
 
     // Cleanup the interval when the component unmounts
