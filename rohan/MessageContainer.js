@@ -51,7 +51,7 @@ const MessageContainer = ({navigation}) => {
             image={item.image}
             title={item.title}
             subTitle={item.description}
-            onPress={() => navigation.navigate(item.title)}
+            onPress={() => navigation.navigate(item.title,item.title)}
             renderRightActions={() => (
               <ListItemDeleteAction onPress={() => handleDelete(item)} />
             )}

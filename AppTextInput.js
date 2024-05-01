@@ -1,11 +1,11 @@
-import React from "react";
+import React, { useContext } from "react";
 import { StyleSheet, TextInput, View } from "react-native";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 
 const AppTextInput = ({ placeholder, onChange }) => {
 
-    const handleTextChange = (num)=>{
-        onChange(placeholder, num)
+    const handleTextChange = (msg)=>{
+        onChange(msg)
     }
 
   return (
@@ -14,7 +14,6 @@ const AppTextInput = ({ placeholder, onChange }) => {
         style={styles.textInput}
         placeholder={placeholder}
         placeholderTextColor="#6e6969"
-        keyboardType="numeric"
         onChangeText={handleTextChange}
       />
     </View>

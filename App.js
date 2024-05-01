@@ -18,9 +18,13 @@ import Wheather from "./Wheather";
 import IotContainer from "./IotContainer";
 import AppNavigator from "./navigation/AppNavigator";
 import { NavigationContainer } from "@react-navigation/native";
+import { Contex } from "./rohan/Contex";
 
 export default function App() {
   const [token, setToken] = useState(null);
+  const [firstMessagesArray, setFirstMessagesArray] = useState([]);
+  const [secondMessagesArray, setSecondMessagesArray] = useState([]);
+  const [thirdMessagesArray, setThirdMessagesArray] = useState([]);
 
   const requestForPushNotification = async () => {
     let token;
@@ -64,11 +68,22 @@ export default function App() {
   useEffect(() => {}, []);
 
   return (
-    <Screen>
-      <NavigationContainer>
-        <AppNavigator/>
-      </NavigationContainer>
-    </Screen>
+    <Contex.Provider
+      value={{
+        firstMessagesArray,
+        setFirstMessagesArray,
+        secondMessagesArray,
+        setSecondMessagesArray,
+        thirdMessagesArray,
+        setThirdMessagesArray
+      }}
+    >
+      <Screen>
+        <NavigationContainer>
+          <AppNavigator />
+        </NavigationContainer>
+      </Screen>
+    </Contex.Provider>
   );
 }
 
