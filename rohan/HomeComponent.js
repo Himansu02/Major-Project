@@ -17,7 +17,7 @@ const HomeComponent = () => {
     thirdMessagesArray,
     setThirdMessagesArray,
   } = useContext(Contex);
-  const [percent, setPercent] = useState(50);
+  const [percent, setPercent] = useState(0);
   const [color,setColor] = useState('')
 
   const getLocation = async () => {
@@ -101,8 +101,7 @@ const HomeComponent = () => {
           radius={120}
           borderWidth={15}
           color={color}
-          shadowColor="#f8f4f4"
-          bgColor="#444B6F"
+          bgColor="black"
         >
           <Text style={{ fontSize: 38, color: "#fff" }}>{`${percent}%`}</Text>
         </ProgressCircle>

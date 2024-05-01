@@ -14,7 +14,7 @@ export default function AppNavigator() {
       screenOptions={{
         tabBarActiveTintColor: '#fff',
         tabBarLabelStyle: { fontSize: 15 },
-        tabBarStyle: { backgroundColor: "#4FAD2A" },
+        tabBarStyle: { backgroundColor: "#0085ea" },
         tabBarIndicatorStyle: { backgroundColor: '#fff' }
       }}
     >
