@@ -19,7 +19,7 @@ const Wheather = () => {
       const options = {
         method: "GET",
         url: "https://weatherapi-com.p.rapidapi.com/current.json",
-        params: { q: `11.127123,78.656891` },
+        params: { q: `${latitude},${longitude}` },
         headers: {
           "X-RapidAPI-Key":
             "39d6afefc0msh4088645ca6fd238p1a6dfdjsnd049c3ac6435",
